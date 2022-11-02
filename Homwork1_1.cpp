@@ -68,13 +68,13 @@ public:
 		return day;
 	}
 	void displayAll() {
-		cout << year << '-' << month << '-' << day;
+		cout << year << '-' << month << '-' << day << ed;
 	}
 	void displayYearMonth() {
-		cout << year << '-' << month;
+		cout << year << '-' << month << ed;
 	}
 	void displayMonthDay() {
-		cout << month << '-' << day;
+		cout << month << '-' << day << ed;
 	}
 };
 class Time {
@@ -115,16 +115,26 @@ public:
 		cout << hour << ':' << minutes << ':' << second << ed;
 	}
 };
+class DateAndTime {
+private:
+	Date date;
+	Time time;
+public:
+	void setDateAndTime(const Time& time, const Date& date) {
+		this->date = date;
+		this->time = time;
+	}
+	void displayDateAndTime() {
+		date.displayAll();
+		time.display();
+	}
+};
 int main() {
 	Accept();
 	Date d1(2003, 5, 12),d2;
-	d2.displayAll();
-	cout << ed;
-	d1.displayAll();
-	cout << ed;
-	Time t1(12, 5, 12),t2;
-	t2.display();
-	t1.display();
-	
+	Time t1(12, 5, 12), t2;
+	DateAndTime dt;
+	dt.setDateAndTime(t1, d1);
+	dt.displayDateAndTime();
 	return 0;
 }
