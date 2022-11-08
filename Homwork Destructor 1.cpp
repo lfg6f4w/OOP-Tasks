@@ -33,21 +33,35 @@ void Accept(){
         freopen("output.txt","w",stdout);
     #endif
 }
-class Destructor {
+class A {
 public:
 	static int numOfClass;
-	Destructor() {
+	A() {
 		numOfClass++;
-		cout << "Number of class in Constructor is : " << numOfClass << ed;
+		cout << "Number of class A in Constructor is : " << numOfClass << ed;
 	}
-	~Destructor() {
-		cout << "Number of class in Destructor is : " << numOfClass << ed;
+	~A() {
+		cout << "Number of class A in Destructor is : " << numOfClass << ed;
 		numOfClass--;
 	}
 };
-int Destructor::numOfClass = 0;
+class B {
+public:
+	static int numOfClass;
+	B() {
+		numOfClass++;
+		cout << "Number of  class B in Constructor is : " << numOfClass << ed;
+	}
+	~B() {
+		cout << "Number of  class B in Destructor is : " << numOfClass << ed;
+		numOfClass--;
+	}
+};
+int A::numOfClass = 0;
+int B::numOfClass = 0;
 int main() {
 	Accept();
-	Destructor d1, d2, d3;
+	A a1, a2, a3;
+	B b1, b2, b3;
 	return 0;
 }
