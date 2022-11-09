@@ -1,0 +1,15 @@
+what happen if we moved the constructor in the private section?
+ - don't run code
+
+what happen if we moved the copy constructor in the private section?
+ - we can't copy the object
+ 
+C++ won't allow you to not use & in copy construtor?
+ - because copy constructor is function which has parametar 
+     So if we pass an argument by value in a copy constructor, a call to copy constructor 
+	   would be made to call copy constructor ==> infinite recursion
+ 
+C++ don't force you to use const, why?
+ - objects are not accidentally modified
+ - It gets executed but copy constructor is not called, instead it calls the default constructor where assignment operator is overloaded.
+ 
