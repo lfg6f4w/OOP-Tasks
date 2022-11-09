@@ -57,7 +57,10 @@ public:
 			this->arr[i] = Value + i;
 		}
 	}
-	int getlen() {
+	int getLen() {
+		return this->length;
+	}
+	int& getLength() {
 		return this->length;
 	}
 	const int getPos(int pos) {
@@ -71,10 +74,13 @@ int main() {
 	Accept();
 	MyVector v1(5, 3);
 	MyVector v2(v1);
-	cout << v2.getlen() << ed;
+	cout << v2.getLen() << ed;
 	cout << v2.getPos(5) << ed;
 	v1.setValues(10);
-	cout << v1.getlen() << ed;
+	cout << v1.getLen() << ed;
+	cout << v1.getPos(5) << ed;
+	int& len = v1.getLength();
+	len = 3;
 	cout << v1.getPos(5) << ed;
 	return 0;
 }
