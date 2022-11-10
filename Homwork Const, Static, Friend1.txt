@@ -1,0 +1,2 @@
+Why C++ doesn't allow creating const static member function ?
+ - static variable shareing with all member data in class , Also using const means no changes for member data.
